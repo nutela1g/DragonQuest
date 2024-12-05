@@ -9,7 +9,7 @@ public class Movement2 : MonoBehaviour
     public float acceleration = 15f; // How quickly to reach the target speed
     public float deceleration = 100f; // How quickly to come to a stop
 
-    private Vector2 currentVelocity; // Current velocity of the player
+    public Vector2 currentVelocity; // Current velocity of the player
     private Vector2 movementInput; // Current input from the player
 
     void Update()
@@ -42,9 +42,9 @@ public class Movement2 : MonoBehaviour
             {
                 currentVelocity.x = 20f;
             }
-            else if (currentVelocity.y > 20f)
+            else if (currentVelocity.y > 17f)
             {
-                currentVelocity.y = 20f;
+                currentVelocity.y = 17f;
             }
         }
         else
