@@ -24,7 +24,7 @@ public class Movement2 : MonoBehaviour
             movementInput *= moveSpeed;
         // Normalize to prevent faster diagonal movement
         if (movementInput.magnitude > 3f)
-            movementInput = new Vector2(movementInput.x / 1.5f,movementInput.y / 1.5f);
+            movementInput = movementInput / 1.5f;
         // Update velocity based on input and acceleration
         if (movementInput != Vector2.zero)
         {

@@ -5,13 +5,6 @@ using UnityEngine;
 public class Char_Anim : MonoBehaviour
 {
     public Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.W) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
@@ -26,7 +19,19 @@ public class Char_Anim : MonoBehaviour
             animator.SetInteger("anim_int", 2);
             this.gameObject.GetComponent<Animator>().enabled = true;
         }
-        if (Input.GetKey(KeyCode.W)) //up
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        {
+            this.gameObject.GetComponent<Animator>().enabled = false;
+            animator.SetInteger("anim_int", 0);
+            this.gameObject.GetComponent<Animator>().enabled = true;
+        }
+        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+        {
+            this.gameObject.GetComponent<Animator>().enabled = false;
+            animator.SetInteger("anim_int", 0);
+            this.gameObject.GetComponent<Animator>().enabled = true;
+        }
+        else if (Input.GetKey(KeyCode.W)) //up
         {
             this.gameObject.GetComponent<Animator>().enabled = false;
             animator.SetInteger("anim_int", 5);

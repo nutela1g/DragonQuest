@@ -14,6 +14,39 @@ public class WhileTrue : MonoBehaviour
     {
         spriteRenderer = mec2.GetComponent<SpriteRenderer>();
     }
+
+    void NejakaMecFunkcia()
+    {
+        switch (KdeMec)
+        {
+            case 0:
+                spriteRenderer.flipX = false;
+                Ruka.transform.position = new Vector3(hrac.transform.position.x - 0.2f, hrac.transform.position.y - 0.5f, -1);
+                Ruka.transform.rotation = Quaternion.Euler(0, 0, 270);
+                break;
+
+            case 1:
+                spriteRenderer.flipX = true;
+                Ruka.transform.position = new Vector3(hrac.transform.position.x + 0.13f, hrac.transform.position.y + 0.2f, 1);
+                Ruka.transform.rotation = Quaternion.Euler(0, 0, 270);
+                break;
+
+            case 2:
+                spriteRenderer.flipX = false;
+                Ruka.transform.position = new Vector3(hrac.transform.position.x + 0.15f, hrac.transform.position.y - 0.2f, -1);
+                Ruka.transform.rotation = Quaternion.Euler(0, 0, 0);
+                break;
+
+            case 3:
+                spriteRenderer.flipX = true;
+                Ruka.transform.position = new Vector3(hrac.transform.position.x - 0.14f, hrac.transform.position.y - 0.2f, 1);
+                Ruka.transform.rotation = Quaternion.Euler(0, 0, 0);
+                break;
+
+            default:
+                break;
+        }
+    }
     void Update()
     {
 
@@ -45,29 +78,6 @@ public class WhileTrue : MonoBehaviour
             KdeMec = 0;
             time2 = 0;
         }
-        if (KdeMec == 0)
-        {
-            spriteRenderer.flipX = false;
-            Ruka.transform.position = new Vector3(hrac.transform.position.x - 0.2f, hrac.transform.position.y - 0.5f, -1);
-            Ruka.transform.rotation = Quaternion.Euler(0, 0, 270);
-        }
-        else if (KdeMec == 1)
-        {
-            spriteRenderer.flipX = true;
-            Ruka.transform.position = new Vector3(hrac.transform.position.x + 0.13f, hrac.transform.position.y + 0.2f, 1);
-            Ruka.transform.rotation = Quaternion.Euler(0, 0, 270);
-        }
-        else if (KdeMec == 2)
-        {
-            spriteRenderer.flipX = false;
-            Ruka.transform.position = new Vector3(hrac.transform.position.x + 0.15f, hrac.transform.position.y - 0.2f, -1);
-            Ruka.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (KdeMec == 3)
-        {
-            spriteRenderer.flipX = true;
-            Ruka.transform.position = new Vector3(hrac.transform.position.x - 0.14f, hrac.transform.position.y - 0.2f, 1);
-            Ruka.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+        NejakaMecFunkcia();
     }
 }
